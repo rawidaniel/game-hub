@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 export interface Platform {
   id: number;
@@ -13,6 +14,9 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = () => useData<Game>("/games");
+const useGames = (selectGenere: Genre | null) =>
+  useData<Game>("/games", { params: { genres: selectGenere?.id } }, [
+    selectGenere?.id,
+  ]);
 
 export default useGames;
