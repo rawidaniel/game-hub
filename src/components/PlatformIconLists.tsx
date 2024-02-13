@@ -5,9 +5,10 @@ import {
   FaApple,
   FaLinux,
   FaAndroid,
+  FaNeos,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
+import { SiNintendo, SiAtari, SiSega, SiCommodore } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { HStack, Icon } from "@chakra-ui/react";
 import { Platform } from "../hooks/useGames";
@@ -28,6 +29,10 @@ function PlatformIconLists({ platforms }: Props) {
     mac: FaApple,
     nintendo: SiNintendo,
     web: BsGlobe,
+    atari: SiAtari,
+    sega: SiSega,
+    "commodore-amiga": SiCommodore,
+    "neo-neo": FaNeos,
   };
   return (
     <HStack marginY={1}>
