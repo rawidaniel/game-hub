@@ -8,7 +8,6 @@ interface GameCardProps {
   game: Game;
 }
 function GameCard({ game }: GameCardProps) {
-  console.log("gamessss", game.parent_platforms);
   return (
     <Card>
       <Image src={getCroppedIMage(game.background_image)} />
