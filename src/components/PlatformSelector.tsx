@@ -9,13 +9,14 @@ interface Props {
 
 function PlatformSelector({ onSelectPlatform, selectPlatform }: Props) {
   const { data } = usePlatforms();
+  console.log({ data });
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         {selectPlatform?.name ?? "Platforms"}
       </MenuButton>
       <MenuList>
-        {data.map((platform) => (
+        {data?.results?.map((platform) => (
           <MenuItem
             onClick={() => onSelectPlatform(platform)}
             key={platform.id}
