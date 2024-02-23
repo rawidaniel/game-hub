@@ -16,7 +16,7 @@ interface Props {
 }
 
 function GenreList({ selectedGener, onSelectGenre }: Props) {
-  const { data: genres, isLoading } = useGenres();
+  const { data: genres, isPending } = useGenres();
   const skeletons = Array.from({ length: 13 }, (_, index) => index + 1);
 
   return (
@@ -24,9 +24,9 @@ function GenreList({ selectedGener, onSelectGenre }: Props) {
       <Heading fontSize="2xl" marginBottom={3}>
         Genres
       </Heading>
-      {isLoading && <GenerListSkeleton skeletons={skeletons} />}
+      {isPending && <GenerListSkeleton skeletons={skeletons} />}
       <List>
-        {genres.map((genre) => (
+        {genres?.results?.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
               <Image
