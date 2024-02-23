@@ -19,7 +19,7 @@ const usePlatforms = () =>
           console.log({ res });
           return res.data;
         }),
-    staleTime: 10_000,
+    staleTime: 24 * 60 * 60 * 1000,
     initialData: { count: platform.length, results: platform },
   });
 
