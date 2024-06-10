@@ -7,6 +7,10 @@ import "./index.css";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes.tsx";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-NZ2DMWKYLW");
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
 const queryClient = new QueryClient();
 
